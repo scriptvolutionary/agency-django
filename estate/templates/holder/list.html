@@ -1,0 +1,46 @@
+{% extends "../layout.html" %}
+{% block title %}Клиенты / Владельцы{% endblock %}
+{% block content %}
+<main class="z-30">
+	<h1 class="py-6 text-xl font-bold text-blue-600">Клиенты / Владельцы</h1>
+	<ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+		{% for h in holders %}
+		<li class="p-3 sm:p-4">
+			<div class="flex items-center space-x-4">
+				<div class="flex-1 min-w-0">
+					<p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+						{{h.name}}
+					</p>
+					<p class="text-sm text-gray-500 truncate dark:text-gray-400">
+						{{h.mail}}
+					</p>
+				</div>
+				<a href="tel:{{h.tel}}"
+					class="inline-flex hover:text-blue-600 ease-in-out transition items-center text-base font-semibold text-gray-900 dark:text-white">
+					{{h.tel}}
+				</a>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+	{% comment %} <div data-popover id={{ i.slug }} role="tooltip"
+		class="absolute z-10 invisible inline-block w-64 text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800 p-4 flex flex-col gap-2">
+		<h3 class="font-semibold text-gray-900 dark:text-white">{{ i.label }}</h3>
+		<p>{{ i.description }}</p>
+		<div>
+			<p>
+				Статус: <span class='underline'>{{ i.status }}</span>
+			</p>
+			<p>
+				Адрес: <span class='underline'>{{ i.address }}</span>
+			</p>
+			<p>
+				Владелец: <span class='underline'>{{ i.holder }}</span>
+			</p>
+		</div>
+		<div data-popper-arrow></div>
+	</div> {% endcomment %}
+
+	</div>
+</main>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "../layout.html" %}
+{% block title %}Риелторы{% endblock %}
+{% block content %}
+<main class="z-30">
+	<h1 class="py-6 text-xl font-bold text-blue-600">Риелторы</h1>
+	<ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+		{% for r in realtors %}
+		<li class="p-3 sm:p-4">
+			<div class="flex items-center space-x-4">
+				<div class="flex-1 min-w-0">
+					<p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+						{{r.name}}
+					</p>
+					<p class="text-sm text-gray-500 truncate dark:text-gray-400">
+						{{r.mail}}
+					</p>
+				</div>
+				<a href="tel:{{r.tel}}" class="inline-flex hover:text-blue-600 ease-in-out transition items-center text-base font-semibold text-gray-900
+					dark:text-white">
+					{{r.tel}}
+				</a>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+	</div>
+</main>
+{% endblock content %}
